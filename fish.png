@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" width="200" height="100">
+  <!-- Fish body -->
+  <path d="M150,50 C130,20 90,20 60,50 C90,80 130,80 150,50 Z" fill="#FF9900" stroke="#CC7700" stroke-width="2" />
+  
+  <!-- Tail -->
+  <path d="M60,50 C40,30 20,40 10,50 C20,60 40,70 60,50 Z" fill="#FF9900" stroke="#CC7700" stroke-width="2" />
+  
+  <!-- Eye -->
+  <circle cx="130" cy="45" r="8" fill="white" stroke="black" stroke-width="2" />
+  <circle cx="130" cy="45" r="4" fill="black" />
+  
+  <!-- Fins -->
+  <path d="M100,20 C110,30 120,30 130,25" fill="none" stroke="#CC7700" stroke-width="2" />
+  <path d="M100,80 C110,70 120,70 130,75" fill="none" stroke="#CC7700" stroke-width="2" />
+</svg>

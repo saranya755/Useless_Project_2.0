@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Goldfish 🐟</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+<body>
+  <div id="aquarium">
+    <div id="bubbles-container"></div>
+    <object data="fish.svg" type="image/svg+xml" id="fish" alt="Cute Goldfish"></object>
+    <div id="talk-bubble" class="hidden">Hello!</div>
+  </div>
+  
+  <div id="controls">
+    <h1>🐟 Hey! I'm Goldie — your digital buddy</h1>
+    <div id="message">Just chillin' in the deep blue...</div>
+    
+    <div class="control-panel">
+      <div class="control-group">
+        <button id="feed-btn">Gimme Food 🍞</button>
+        <div id="hunger-meter">
+          <div id="hunger-level"></div>
+        </div>
+      </div>
+      
+      <div class="control-group">
+        <button id="talk-btn">Chat with Me 💬</button>
+      </div>
+      
+      <div class="control-group">
+        <label for="color-picker">New Look:</label>
+        <input type="color" id="color-picker" value="#FF9900">
+      </div>
+      
+      <div class="control-group">
+        <button id="sound-btn"><i class="fas fa-volume-up"></i> Sound On/Off</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="sounds.js"></script>
+  <script src="deep-sea.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,322 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: url('https://images.pexels.com/photos/3894157/pexels-photo-3894157.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Comic Sans MS', cursive;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #aquarium {
+    position: relative;
+    flex-grow: 1;
+    overflow: hidden;
+    background: linear-gradient(to bottom, rgba(0, 30, 60, 0.4), rgba(0, 10, 30, 0.7));
+    box-shadow: inset 0 0 80px rgba(0, 100, 200, 0.4);
+    border-top: 2px solid rgba(0, 200, 255, 0.3);
+  }
+  
+  /* Deep sea elements */
+  #deep-sea-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  /* Jellyfish styling */
+  .jellyfish {
+    position: absolute;
+    border-radius: 50% 50% 40% 40%;
+    animation: pulse 4s infinite alternate, float 15s infinite ease-in-out;
+    box-shadow: 0 0 15px rgba(150, 180, 255, 0.5);
+    z-index: 2;
+  }
+  
+  .tentacle {
+    position: absolute;
+    bottom: -100%;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.5);
+    transform-origin: top;
+    animation: wave 3s infinite ease-in-out;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(0.9);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(1.1);
+      opacity: 0.9;
+    }
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0) translateX(0);
+    }
+    25% {
+      transform: translateY(-20px) translateX(10px);
+    }
+    50% {
+      transform: translateY(0) translateX(20px);
+    }
+    75% {
+      transform: translateY(20px) translateX(10px);
+    }
+    100% {
+      transform: translateY(0) translateX(0);
+    }
+  }
+  
+  @keyframes wave {
+    0% {
+      transform: rotate(-5deg);
+    }
+    50% {
+      transform: rotate(5deg);
+    }
+    100% {
+      transform: rotate(-5deg);
+    }
+  }
+  
+  /* Seaweed styling */
+  .seaweed {
+    position: absolute;
+    border-radius: 50% 50% 0 0;
+    transform-origin: bottom;
+    animation: sway 8s infinite ease-in-out;
+    z-index: 2;
+  }
+  
+  @keyframes sway {
+    0% {
+      transform: rotate(-8deg);
+    }
+    50% {
+      transform: rotate(8deg);
+    }
+    100% {
+      transform: rotate(-8deg);
+    }
+  }
+  
+  /* Glowing particles */
+  .glowing-particle {
+    position: absolute;
+    border-radius: 50%;
+    animation: glow 4s infinite alternate;
+    z-index: 3;
+  }
+  
+  @keyframes glow {
+    0% {
+      opacity: 0.3;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+  
+  #fish {
+    position: absolute;
+    width: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.5s;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+    z-index: 10;
+  }
+  
+  #message {
+    color: white;
+    font-size: 24px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 8px 16px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  #controls {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    z-index: 100;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 0;
+    font-size: 28px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .control-panel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 15px;
+  }
+  
+  .control-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  #sound-btn {
+    background-color: #2196F3;
+  }
+  
+  #sound-btn:hover {
+    background-color: #0b7dda;
+  }
+  
+  #hunger-meter {
+    width: 100px;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  #hunger-level {
+    height: 100%;
+    width: 100%;
+    background-color: #ff9900;
+    transition: width 0.5s;
+  }
+  
+  #color-picker {
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  /* Bubble styling */
+  .bubble {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    bottom: 0;
+    animation: rise 8s infinite ease-in;
+    z-index: 5;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(1px);
+  }
+  
+  @keyframes rise {
+    0% {
+      transform: translateY(0) scale(0.3) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.3;
+    }
+    20% {
+      opacity: 0.8;
+      transform: translateY(-20vh) scale(0.6) rotate(5deg) translateX(10px);
+    }
+    40% {
+      transform: translateY(-40vh) scale(0.7) rotate(10deg) translateX(-15px);
+    }
+    60% {
+      transform: translateY(-60vh) scale(0.8) rotate(15deg) translateX(20px);
+    }
+    80% {
+      transform: translateY(-80vh) scale(0.9) rotate(20deg) translateX(-10px);
+    }
+    100% {
+      transform: translateY(-100vh) scale(1) rotate(25deg);
+      opacity: 0;
+    }
+  }
+  
+  /* Talk bubble styling */
+  #talk-bubble {
+    position: absolute;
+    background-color: white;
+    color: black;
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 200px;
+    z-index: 20;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s;
+  }
+  
+  #talk-bubble:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    border-width: 10px 10px 0;
+    border-style: solid;
+    border-color: white transparent;
+  }
+  
+  .hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 22px;
+    }
+    
+    #message {
+      font-size: 18px;
+    }
+    
+    .control-panel {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .control-group {
+      margin-bottom: 10px;
+      width: 100%;
+      max-width: 250px;
+    }
+    
+    #fish {
+      width: 80px;
+    }
+  }
+  
