@@ -396,5 +396,49 @@ function updateSoundButtonIcon(isPlaying) {
   }
 }
 
+let fishScale = 1;
+
+function growFish() {
+  fishScale += 0.1; // Increase scale by 10%
+  const fish = document.getElementById('fish');
+  fish.style.transform = `scale(${fishScale})`;
+}
+
+// Example: Attach to feed button
+document.getElementById('feed-btn').addEventListener('click', growFish);
+
+
+
+// Attach feed function to button
+document.getElementById('feed-btn').addEventListener('click', feedFish);
+
+function checkHungerAlarm() {
+  if (fishState.hunger <= 20 && fishState.hunger > 0) {
+    showTalkBubble("⚠️ I'm starving! Please feed me!");
+  }
+}
+
+function fishDies() {
+  fish.style.opacity = "0.5";
+  message.textContent = "💀 Goldie didn't make it...";
+  talkBubble.textContent = "Goodbye...";
+  talkBubble.classList.remove("hidden");
+  feedBtn.disabled = true;
+  talkBtn.disabled = true;
+  colorPicker.disabled = true;
+  soundBtn.disabled = true;
+}
+
+function decreaseHunger() {
+  fishState.hunger = Math.max(0, fishState.hunger - 5);
+  updateHungerMeter();
+  updateMood();
+  checkHungerAlarm();
+  if (fishState.hunger === 0) {
+    fishDies();
+  }
+}
+
+
 // Initialize everything
 init();
