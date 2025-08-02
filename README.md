@@ -66,7 +66,7 @@ You forgot to feed.it says "goodbye" and dies.
 <img width="1875" height="826" alt="Screenshot 2025-08-02 070802" src="https://github.com/user-attachments/assets/04a5b048-55f5-4557-b3e3-59d131026fe7" />
 Random talks with Goldfish.
 
-
+Live link : https://saranya755.github.io/Useless_Project_2.0/
 
 ## Team Contributions
 - Diya Shameer : Idea Generator
